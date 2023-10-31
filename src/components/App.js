@@ -13,17 +13,18 @@ const App = () => {
   axios.get('https://gauravgitacc.github.io/postAppData/posts.json').then(response => dispatch(fetch(response.data))).catch(e => console.log(e))
 
   return (
-    <div className="container">
+    <>{arr.length && <><h1>A short Naration of lorem ipsum</h1><h4>Below containes title body</h4></>}
+      <div className="container">
 
-      {arr.map((data, index) => 
-      <div className="card" key={index}>
+        {arr.map((data, index) =>
+          <li className="card" key={index}>
 
-        <p><b>Title: </b>{data.title}</p>
-        <p><b>Body: </b>{data.body}</p>
+            <p><b>Title: </b>{data.title}</p>
+            <p><b>Body: </b>{data.body}</p>
 
-      </div>)}
+          </li>)}
 
-    </div>
+      </div></>
   )
 }
 
